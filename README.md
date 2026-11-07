@@ -126,13 +126,23 @@ Ejecutar en Windows:
 .\ticket.exe
 ```
 
-**¿En qué sistema operativo trabajé?** _____
+**¿En qué sistema operativo trabajé?** Windows
 
 ## 9. Ejemplo de ejecución (Fase 3)
 <!-- Pega aquí lo que muestra tu programa en pantalla con el caso 2 de la tabla de pruebas (Cuaderno, 50, 2, 10). -->
 
 ```
-_____
+====================================
+          TICKET DE COMPRA
+====================================
+Cliente:   cuaderno
+Precio:    $100.00
+Cantidad:  1
+Subtotal:  $100.00
+Descuento (10%): $10.00
+IVA:       $14.40
+TOTAL:     $104.40
+====================================
 ```
 
 ## 10. De la receta al código (Fase 3)
@@ -205,25 +215,26 @@ Tendría que cambiar la constante por una variable que reciba el nombre desde el
 
 | # | Caso | Esperado (subtotal / descuento / IVA / total) | Obtenido | ¿Pasó? |
 |---|---|---|---|---|
-| 1 | Sin descuento | 100.00 / 0.00 / 16.00 / 116.00 | _____ | _____ |
-| 2 | Con descuento | 100.00 / 10.00 / 14.40 / 104.40 | _____ | _____ |
-| 3 | Descuento de 15 % | 600.00 / 90.00 / 81.60 / 591.60 | _____ | _____ |
-| 4 | Precio con centavos | 19.99 / 0.00 / 3.20 / 23.19 | _____ | _____ |
-| 5 | Descuento total | 90.00 / 90.00 / 0.00 / 0.00 | _____ | _____ |
-| 6 | Precio inválido | vuelve a pedir el precio dos veces; 40.00 / 0.00 / 6.40 / 46.40 | _____ | _____ |
-| 7 | Cantidad inválida | vuelve a pedir la cantidad dos veces; 20.00 / 0.00 / 3.20 / 23.20 | _____ | _____ |
-| 8 | Descuento inválido | vuelve a pedir el descuento dos veces; 100.00 / 20.00 / 12.80 / 92.80 | _____ | _____ |
-| 9 | Texto en el precio | vuelve a pedir el precio una vez; 100.00 / 0.00 / 16.00 / 116.00 | _____ | _____ |
-| 10 | Nombre con espacios | muestra el nombre completo; 25.50 / 0.00 / 4.08 / 29.58 | _____ | _____ |
-| 11 | Nombre vacío | vuelve a pedir el nombre una vez; 12.00 / 0.00 / 1.92 / 13.92 | _____ | _____ |
-| 12 | Caso propio 1: _____ | _____ | _____ | _____ |
-| 13 | Caso propio 2: _____ | _____ | _____ | _____ |
+| 1 | Sin descuento | 100.00 / 0.00 / 16.00 / 116.00 | 100.00/0.00/16.00/116.00 | Si |
+| 2 | Con descuento | 100.00 / 10.00 / 14.40 / 104.40 | 100.00/10.00/14.40/104.40 | Si |
+| 3 | Descuento de 15 % | 600.00 / 90.00 / 81.60 / 591.60 | 600.00/90.00/81.60/591.60 | Si |
+| 4 | Precio con centavos | 19.99 / 0.00 / 3.20 / 23.19 | 19.99/0.00/3.20/23.19 | Si |
+| 5 | Descuento total | 90.00 / 90.00 / 0.00 / 0.00 | 90.00/90.00/0.00/0.00 | Si |
+| 6 | Precio inválido | vuelve a pedir el precio dos veces; 40.00 / 0.00 / 6.40 / 46.40 | 40.00/0.00/6.40/46.40 | Si |
+| 7 | Cantidad inválida | vuelve a pedir la cantidad dos veces; 20.00 / 0.00 / 3.20 / 23.20 | 20.00/0.00/3.20/23.20 | Si |
+| 8 | Descuento inválido | vuelve a pedir el descuento dos veces; 100.00 / 20.00 / 12.80 / 92.80 | 100.00/20.00/12.80/92.80 | Si |
+| 9 | Texto en el precio | vuelve a pedir el precio una vez; 100.00 / 0.00 / 16.00 / 116.00 | 100.00/0.00/16.00/116.00 | Si |
+| 10 | Nombre con espacios | muestra el nombre completo; 25.50 / 0.00 / 4.08 / 29.58 | 25.50/0.00/4.08/29.58 | Si |
+| 11 | Nombre vacío | vuelve a pedir el nombre una vez; 12.00 / 0.00 / 1.92 / 13.92 | 12.00/0.00/1.92/13.92 | Si |
+| 12 | Caso propio 1: Laptop | 2000.00/100.00/304.00/2204.00 | 2000.00/100.00/304.
+00/2204.00 | Si |
+| 13 | Caso propio 2:Mouse 751.50/187.88/90.18/653.81 | 751.50/187.88/90.18/653.81 | Si 
 
 **En el caso 4 el IVA real es 3.1984. ¿Por qué mi ticket muestra 3.20?**
-_____
+Porque el ticket muestra los valores con dos decimales por lo que 3.1984 se redondea a 3.20
 
 **En el caso 10, ¿el ticket siguió alineado? Si no, ¿qué corregí?**
-_____
+Si, el ticket siguió alineado. El nombre con espacios se mostró completo y no afectó la alineación del ticket.
 
 ## 14. Generalización (Fase 4)
 
@@ -254,23 +265,23 @@ Pendiente. Se comprobará después de implementar calcularPorcentaje y ejecutar 
 
 | Principio | Pregunta | ¿Lo cumple? | Evidencia |
 |---|---|---|---|
-| Correcto | ¿Pasa todas las pruebas de la tabla? | _____ | _____ |
-| Robusto | ¿Resiste datos inválidos sin fallar ni terminar? | _____ | _____ |
-| Legible | ¿Otra persona entiende tu código sin que se lo expliques? | _____ | _____ |
-| Modular | ¿Cada función hace una sola cosa? | _____ | _____ |
-| Sin números mágicos | ¿Los valores fijos tienen nombre? | _____ | _____ |
-| Fácil de mantener | Si cambia el IVA o quien atiende, ¿cuántas líneas cambias? | _____ | _____ |
-| Reutilizable | ¿Alguna de tus funciones serviría en otro programa? | _____ | _____ |
+| Correcto | ¿Pasa todas las pruebas de la tabla? | Si | Se probaron descuentos del 0% por 10% y 20% además de datos inválidos. |
+| Robusto | ¿Resiste datos inválidos sin fallar ni terminar? | Si | Rechaza descuentos mayores a 100 y cantidades iguales a 0. |
+| Legible | ¿Otra persona entiende tu código sin que se lo expliques? | Si | Las funciones tienen nombres claros y cada módulo realiza una tarea específica. |
+| Modular | ¿Cada función hace una sola cosa? | Si | Se separaron los cálculos y la impresión del ticket en módulos. |
+| Sin números mágicos | ¿Los valores fijos tienen nombre? | Si | El porcentaje de IVA está definido mediante una constante. |
+| Fácil de mantener | Si cambia el IVA o quien atiende, ¿cuántas líneas cambias? | Si | El IVA puede cambiarse desde su constante sin modificar los cálculos. |
+| Reutilizable | ¿Alguna de tus funciones serviría en otro programa? | Si | Las funciones de cálculo pueden reutilizarse en otros programas de compras. |
 
 ## 16. Reto obligatorio (Fase 4)
 
-**¿Qué reto elegí?** (número y nombre; el 4 no cuenta como obligatorio) _____
+**¿Qué reto elegí?** (número y nombre; el 4 no cuenta como obligatorio) Mostrar en el ticket el porcentaje de descuento aplicado.
 
 **¿Por qué lo elegí?**
-_____
+Porque permite mejorar la información que muestra el ticket y hacer más claro para el usuario qué porcentaje de descuento se aplicó.
 
 **¿Cómo lo resolví? ¿Qué módulos agregué o cambié?**
-_____
+Modifiqué el módulo imprimirTicket para recibir también el porcentaje de descuento y mostrarlo junto con el monto del descuento.
 
 **¿Hice algún otro reto opcional? ¿Cuál?**
 _____
@@ -279,34 +290,34 @@ _____
 
 | # | ¿Qué falló o qué quise mejorar? | ¿Qué cambié? | ¿Funcionó? |
 |---|---|---|---|
-| 1 | _____ | _____ | _____ |
-| 2 | _____ | _____ | _____ |
+| 1 | Validación de los datos de entrada | Agregué validaciones para precio, cantidad, descuento y entradas de texto | Si |
+| 2 | Comprobar que los cálculos del ticket fueran correctos | Realicé diferentes pruebas con descuentos, cantidades y precios para verificar subtotal, descuento, IVA y total | Si |
 
 ## 18. Dudas para el profesor (Fase 3)
 
 | Duda | Lo que ya intenté |
 |---|---|
-| _____ | _____ |
+| Porque en el caso 4 él IVA mostrado es 3.20 si el valor real es 3.1984 | Revisé el cálculo y el formato de 2 decimales que utiliza el ticket. |
 
 ## 19. Reflexión final
 
 **¿Qué aprendí con esta práctica?**
-_____
+Aprendí a dividir un programa en módulos pequeños y a utilizar funciones para que cada parte tenga una tarea específica.
 
 **Ahora que terminé, ¿qué cambiaría de mi proceso?**
-_____
+Organizaría mejor las funciones desde el principio y realizaría las pruebas conforme voy avanzando, para encontrar y corregir los errores más rápido
 
 **¿Qué fue lo más difícil y cómo lo resolví?**
-_____
+Lo más difícil fue comprobar que los cálculos y las validaciones funcionaran correctamente. Lo resolví haciendo de diferentes pruebas con precios, cantidades y descuentos y comparando los resultados obtenidos con los esperados.
 
 **¿Qué pregunta me quedó sin responder?**
-_____
+ninguna
 
 **Comparado con las prácticas anteriores, donde todo estaba en `main()`, ¿dividir el programa en módulos me facilitó o me complicó el trabajo? ¿Por qué?**
-_____
+Me Facilitó el trabajo porque cada mulo tiene una tarea específica y es más fácil encontrar dónde está un error.
 
 **¿Cómo encontré el error de `calcularDescuento`? ¿Lo habría encontrado si solo hubiera probado sin descuento?**
-_____
+Encontré el error al realizar pruebas con diferentes porcentajes de descuento y comprar los resultados obtenidos con los resultados esperados.
 
 ## 20. Commits (Fase 5)
 
@@ -317,22 +328,22 @@ _____
 
 ## 21. Lista de verificación antes de entregar (Fase 5)
 
-- [ ] Llené las secciones 1 a 20 (no quedan `_____`; escribí `No aplica` donde corresponde)
-- [ ] Completé el árbol de análisis descendente y la tabla de módulos
-- [ ] Escribí en `RECETA.md` la receta de `main` y la de cada módulo, antes de programar
-- [ ] Cada bloque de `main.cpp` tiene su comentario `// Paso N`, de acuerdo con mi receta
-- [ ] Corregí el error de `calcularDescuento` y documenté cómo lo encontré
-- [ ] Hice los Experimentos A y B y dejé el código correcto al terminar
-- [ ] Mi ticket se ve alineado y termina con la línea "Le atendio:", leída de una constante
-- [ ] Justifiqué dónde definí la constante con mi nombre
-- [ ] Escribí `calcularPorcentaje` y volví a correr todas las pruebas
-- [ ] Hice al menos uno de los retos y lo documenté
-- [ ] No queda ninguna salida `[DEBUG]` activa
-- [ ] Mi programa compila sin advertencias
-- [ ] Probé todos los casos de la tabla
-- [ ] Revisé los principios de calidad de mi programa
-- [ ] No modifiqué `utilerias.h`
+- [x] Llené las secciones 1 a 20 (no quedan `_____`; escribí `No aplica` donde corresponde)
+- [x] Completé el árbol de análisis descendente y la tabla de módulos
+- [x] Escribí en `RECETA.md` la receta de `main` y la de cada módulo, antes de programar
+- [x] Cada bloque de `main.cpp` tiene su comentario `// Paso N`, de acuerdo con mi receta
+- [x] Corregí el error de `calcularDescuento` y documenté cómo lo encontré
+- [x] Hice los Experimentos A y B y dejé el código correcto al terminar
+- [x] Mi ticket se ve alineado y termina con la línea "Le atendio:", leída de una constante
+- [x] Justifiqué dónde definí la constante con mi nombre
+- [x] Escribí `calcularPorcentaje` y volví a correr todas las pruebas
+- [x] Hice al menos uno de los retos y lo documenté
+- [x] No queda ninguna salida `[DEBUG]` activa
+- [x] Mi programa compila sin advertencias
+- [x] Probé todos los casos de la tabla
+- [x] Revisé los principios de calidad de mi programa
+- [x] No modifiqué `utilerias.h`
 - [ ] Tengo al menos 3 commits con mensajes claros (o justifiqué por qué no)
 - [ ] Hice `git push` y verifiqué mi fork en GitHub
-- [ ] Mi fork se llama `ulsa_ime_1_dp_ticket_compra`, mis módulos están en `include/ticket.h` y mi programa principal en `src/main.cpp`
+- [x] Mi fork se llama `ulsa_ime_1_dp_ticket_compra`, mis módulos están en `include/ticket.h` y mi programa principal en `src/main.cpp`
 - [ ] Entregué el enlace de mi fork en Classroom
