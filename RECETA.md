@@ -11,7 +11,16 @@
 
 ```text
 1. MOSTRAR "Bienvenido a mi programa"
-
+2. MOSTRAR "Ingrese el nombre del cliente"
+3. LEER nombre
+4. MOSTRAR "Ingrese el precio del producto"
+5. LEER precio
+6. CALCULAR IVA del producto
+7. CALCULAR descuento del producto
+8. CALCULAR porcentaje del descuento
+9. CALCULAR total a pagar
+10. MOSTRAR el ticket de compra
+11. MOSTRAR "Le atendió: " y el nombre del cliente
 ```
 
 ## Recetas de los módulos
@@ -21,7 +30,9 @@
 ### `calcularIVA`
 
 ```text
-MODULO calcularIVA(_____)
+MODULO calcularIVA(subtotalConDescuento)
+CALCULAR IVA = subtotalConDescuento * 0.16
+DEVOLVER IVA
 
 FIN MODULO
 ```
@@ -29,7 +40,13 @@ FIN MODULO
 ### `imprimirTicket`
 
 ```text
-MODULO imprimirTicket(_____)
+MODULO imprimirTicket(nombre, precio, IVA, descuento, total)
+MOSTRAR "Ticket de compra"
+    MOSTRAR nombre
+    MOSTRAR precio
+    MOSTRAR IVA
+    MOSTRAR descuento
+    MOSTRAR total
 
 FIN MODULO
 ```
@@ -37,7 +54,10 @@ FIN MODULO
 ### `calcularPorcentaje` (Fase 4)
 
 ```text
-MODULO calcularPorcentaje(_____)
+MODULO calcularPorcentaje(cantidad, porcentaje)
+
+CALCULAR resultado = cantidad * porcentaje / 100
+DEVOLVER resultado
 
 FIN MODULO
 ```
@@ -45,5 +65,10 @@ FIN MODULO
 ### Otros módulos que agregues (por ejemplo, para tu reto)
 
 ```text
+ MÓDULO calcularDescuento(precio, porcentaje)
 
+    CALCULAR descuento = precio * porcentaje / 100
+    DEVOLVER descuento
+
+FIN MÓDULO
 ```
