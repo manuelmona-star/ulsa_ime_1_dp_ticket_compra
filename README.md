@@ -321,10 +321,14 @@ Encontré el error al realizar pruebas con diferentes porcentajes de descuento y
 
 ## 20. Commits (Fase 5)
 
-**¿Cuántos commits hice durante la práctica?** _____
+**¿Cuántos commits hice durante la práctica?** 3
 
 **Si hice menos de 3, ¿por qué?**
-_____
+Se realizaron los siguientes commits:
+
+1. Implementa funciones del ticket de compra
+2. Completa checklist de la practica
+3. Documenta pruebas finales
 
 ## 21. Lista de verificación antes de entregar (Fase 5)
 
